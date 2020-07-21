@@ -59,7 +59,10 @@ document.addEventListener('DOMContentLoaded', startGame)
 
   }
 
-function startGame () {
+function startGame (cell) {
+  for (i = 0; i < board.cells.length; i++)
+  board.cells[i].surroundingMines = countSurroundingMines(board.cells[i])
+  board.cells[i].isMarked = false;
   lib.initBoard()
 }
 

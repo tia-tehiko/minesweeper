@@ -51,7 +51,7 @@ function checkForWin () {
       return;
     }
   }
-  lib.displayMessage('You are a Winner!')
+  lib.displayMessage('You Win, CHEHOO')
   }
 
 

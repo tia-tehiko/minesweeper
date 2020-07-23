@@ -12,7 +12,7 @@ function createBoard() {
       var cell = {
         row: i,
         col: j,
-        isMine: Math.random () >= 0.7,
+        isMine: Math.random () >= 0.8,
         hidden: true,
         isMarked: false
       }

@@ -45,7 +45,7 @@ function startGame (cell) {
 function checkForWin () {
 
   for (var i = 0; i < board.cells.length; i++) { 
-    if (board.cells[i].isMine == true && board.cells[i].isMarked == true) {
+    if (board.cells[i].isMine == true && board.cells[i].isMarked == false) {
       return; 
     } else if (board.cells[i].isMine === false && board.cells[i].hidden === false) {
       return;

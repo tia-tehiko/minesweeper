@@ -12,10 +12,15 @@ body {
   flex-direction: column;
 }
 
-h1 {
+#title {
   padding-top: 2em;
-  color: rgb(106, 170, 255);;
+  color: rgb(106, 170, 255);
   text-align: center;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 20px;
+  font-size: 35px;
+  font-weight: bold;
 }
 
 #message, #notes {
@@ -25,20 +30,26 @@ h1 {
 }
 
 #message {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 #reset {
-  margin-top: 1em;
-  border: grey;
-  color: black;
-  padding: 15px 32px;
+  margin: 30px 30px 5px 30px;
+  color: rgb(53, 139, 252);
+  padding: 20px 40px;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
-  background-color: none;
+  font-size: 20px;
+  font-family:  'Raleway', sans-serif;
+  border-radius: 10px;
+  border-color: rgb(53, 139, 252);
+  ;
 
+}
+
+.caption {
+  margin: 0px; 
+  font-size: 12px;
 }
 
 .board {
@@ -65,7 +76,7 @@ h1 {
 }
 
 div.mine, div.mine:hover {
-  background: no-repeat center/60% url("images/bomb.svg") rgb(255, 199, 211);
+  background: no-repeat center/60% url("images/bomb.svg") rgb(255, 209, 234);
 }
 
 div.hidden {

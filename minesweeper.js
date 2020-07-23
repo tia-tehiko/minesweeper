@@ -9,7 +9,7 @@ function createBoard() {
 
   for (var i = 0; i < 5; i++) {
     for (var j = 0; j < 5; j++) {
-      let cell = {
+      var cell = {
         row: i,
         col: j,
         isMine: Math.random () >= 0.8,
@@ -32,6 +32,7 @@ function startGame (cell) {
 
   document.addEventListener('click', checkForWin);
   document.addEventListener('contextmenu', checkForWin);
+  
 
   lib.initBoard()
 }
@@ -43,16 +44,19 @@ function startGame (cell) {
 
 function checkForWin () {
 
-  for (var i = 0; i < board.cells.length; i++) {
-
-    if (board.cells[i].isMine === true && board.cells[i].isMarked === true) {
+  for (var i = 0; i < board.cells.length; i++) { 
+    if (board.cells[i].isMine == true && board.cells[i].isMarked == true) {
       return; 
-    } else if (board.cells[i].isMine === false && board.cells[i].hidden === true) {
+    } else if (board.cells[i].isMine === false && board.cells[i].hidden === false) {
       return;
     }
   }
-    lib.displayMessage('You are a Winner!')
+  lib.displayMessage('You are a Winner!')
   }
+
+  // function resetGame () {
+  //   document.getElementById('reset').addEventListener('click', resetBoard);
+  // }
 
 
 // Define this function to count the number of mines around the cell

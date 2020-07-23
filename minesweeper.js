@@ -1,76 +1,34 @@
 document.addEventListener('DOMContentLoaded', startGame)
 
 // Define your `board` object here!
-  var board = {
-    cells: [{
-      row: 0,
-      col: 0,
-      isMine: true,
-      hidden: true,
-      isMarked: true
-    }, 
-    {
-      row: 0,
-      col: 1,
-      isMine: true,
-      hidden: true,
-      isMarked: true
-    }, 
-    {
-      row: 1,
-      col: 0,
-      isMine: false,
-      hidden: true,
-      isMarked: true
-    }, 
-    {
-      row: 1,
-      col: 1,
-      isMine: false,
-      hidden: true,
-      isMarked: true
-    }, 
-    {
-      row: 0,
-      col: 2,
-      isMine: false,
-      hidden: true,
-      isMarked: true
-    }, 
-    {
-      row: 1,
-      col: 2,
-      isMine: false,
-      hidden: true,
-      isMarked: true
-    }, 
-    {
-      row: 2,
-      col: 0,
-      isMine: true,
-      hidden: true,
-      isMarked: true
-    }, 
-    {
-      row: 2,
-      col: 1,
-      isMine: true,
-      hidden: true,
-      isMarked: true
-    }, 
-    {
-      row: 2,
-      col: 2,
-      isMine: false,
-      hidden: true,
-      isMarked: true
-    }]
 
+var board = {}
+
+function createBoard() {
+  board.cells = [];
+
+  for (var i = 0; i < 5; i++) {
+    for (var j = 0; j < 5; j++) {
+      let cell = {
+        row: i,
+        col: j,
+        isMine: Math.random () >= 0.8,
+        hidden: true,
+        isMarked: false
+      }
+      board.cells.push(cell); 
+    }  
   }
+ return board
+}
 
+//this functions starts the game
 function startGame (cell) {
+  createBoard();
+  //Loop through board.cells
   for (var i = 0; i < board.cells.length; i++)
   board.cells[i].surroundingMines = countSurroundingMines(board.cells[i])
+
 
   document.addEventListener('click', checkForWin);
   document.addEventListener('contextmenu', checkForWin);
@@ -84,14 +42,16 @@ function startGame (cell) {
 // 2. Are all of the mines marked?
 
 function checkForWin () {
+
   for (var i = 0; i < board.cells.length; i++) {
+
     if (board.cells[i].isMine === true && board.cells[i].isMarked === true) {
       return; 
     } else if (board.cells[i].isMine === false && board.cells[i].hidden === true) {
       return;
     }
   }
-    lib.displayMessage('WINNER!')
+    lib.displayMessage('You are a Winner!')
   }
 
 
